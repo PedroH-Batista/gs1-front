@@ -130,3 +130,55 @@ window.addEventListener("DOMContentLoaded", function () {
 
   loadQuestion();
 });
+
+//Verificação do Campo de Formulario
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".formulario");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Nao envia automatico
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefone = document.getElementById("telefone").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
+
+    if (nome === "") {
+      alert("Por favor, preencha o nome.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      alert("Por favor, insira um e-mail válido.");
+      return;
+    }
+
+    if (!validateTelefone(telefone)) {
+      alert(
+        "Por favor, insira um telefone válido (apenas números, mínimo 8 dígitos)."
+      );
+      return;
+    }
+
+    if (mensagem === "") {
+      alert("Por favor, escreva uma mensagem.");
+      return;
+    }
+
+    // Confirmacao do formulario
+    alert("Formulário enviado com sucesso!");
+    form.reset();
+  });
+
+  // Validação do Email
+  function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+
+  // Validação do telefone
+  function validateTelefone(telefone) {
+    const regex = /^\d{8,}$/;
+    return regex.test(telefone);
+  }
+});
