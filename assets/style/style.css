@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Special+Gothic+Expanded+One&display=swap");
+
+/* Cores padrão do Figma */
+:root {
+  --cor-branca: #ffffff;
+  --cor-fundo: #1e1e1e;
+  --cor-destaque: #051357;
+  --cor-alternativa: #010620;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+a,
+p,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+  color: var(--cor-branca);
+}
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-color: black;
+  background-image: linear-gradient(
+      transparent calc(30px - 2px),
+      rgba(255, 255, 255, 0.034) calc(30px - 2px),
+      rgba(255, 255, 255, 0.041) 30px
+    ),
+    linear-gradient(
+      90deg,
+      transparent calc(30px - 2px),
+      rgba(255, 255, 255, 0.007) calc(30px - 2px),
+      rgba(255, 255, 255, 0.014) 30px
+    );
+  background-size: 30px 30px;
+  animation: moverGrade 20s linear infinite;
+  z-index: -2;
+}
+
+@keyframes moverGrade {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
