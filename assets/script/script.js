@@ -271,3 +271,44 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (slides.length) showSlide(slideIndex);
 });
+ // ======================
+// Alternância de Tema (Escuro/Claro)
+// ======================
+(function() {
+  const btn = document.getElementById('theme-toggle-btn');
+  if (!btn) return;
+  // Salva tema no localStorage
+  function setTheme(theme) {
+    document.body.classList.toggle('light-theme', theme === 'light');
+    localStorage.setItem('noah-theme', theme);
+    btn.innerHTML = theme === 'light' ? '☀️' : '🌙';
+  }
+  // Define tema ao abrir
+  const stored = localStorage.getItem('noah-theme');
+  setTheme(stored === 'light' ? 'light' : 'dark');
+
+  btn.addEventListener('click', () => {
+    const atual = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+    setTheme(atual === 'dark' ? 'light' : 'dark');
+  });
+})();
+
+// Troca da logo pelo tema
+function atualizarLogoTema() {
+  const logoImg = document.getElementById("logo-img");
+  if (!logoImg) return;
+  if (document.body.classList.contains("light-theme")) {
+    logoImg.src = "assets/img/logoNoah-branca.png";
+  } else {
+    logoImg.src = "assets/img/logoNoah.png";
+  }
+}
+
+// Sempre que mudar o tema, troca a logo também
+const themeToggleBtn = document.getElementById("theme-toggle-btn");
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", atualizarLogoTema);
+}
+
+// Troca na primeira carga da página também (por segurança)
+document.addEventListener("DOMContentLoaded", atualizarLogoTema);
