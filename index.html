@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOAH</title>
-    <link rel="stylesheet" href="assets/style/style.css" />
-  </head>
-  <body>
-    <div class="background-animation"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NOAH</title>
+  <link rel="stylesheet" href="assets/style/style.css" />
+</head>
+<body>
+  <!-- Fundo animado (opcional) -->
+  <div class="background-animation"></div>
 
-    <header class="navbar">
-      <a href="index.html">
-        <img src="assets/img/logoNoah.png" alt="Logo NOAH" class="logo" />
-      </a>
-      <p class="nome-logo">NOAH - Segurança Contra Enchentes</p>
-      <nav>
-        <ul class="links">
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#grafico">Gráfico</a></li>
-          <li><a href="#impacto">Impacto</a></li>
-        </ul>
-      </nav>
-    </header>
+  <!-- NAVBAR com menu hamburguer para mobile -->
+  <header class="navbar">
+    <a href="#home" class="logo-link">
+      <img src="assets/img/logoNoah.png" alt="Logo NOAH" class="logo" id="logo-img" />
+    </a>
+    <p class="nome-logo">NOAH - Segurança Contra Enchentes</p>
+    <!-- Botão hamburguer para celular/tablet -->
+    <button class="hamburguer" id="hamburguer-btn" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="links" id="navbar-links">
+        <li><a href="#home" class="menu-link">Home</a></li>
+        <li><a href="#objetivo" class="menu-link">Objetivos</a></li>
+        <li><a href="#impacto" class="menu-link">Tecnologia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Botão do modo escuro/claro -->
+<button id="theme-toggle-btn" aria-label="Alternar tema" title="Alternar tema"></button>
 
+  <main>
+    <!-- HERO: imagem grande + cards de impacto -->
     <section class="hero" id="home">
       <img
         src="assets/img/img-home-page.png"
@@ -30,166 +40,109 @@
         class="img-home-page"
       />
       <a
-        href="https://youtu.be/video-exemplo"
+        href="https://wokwi.com/projects/432209112083671041"
         target="_blank"
         class="btn-video-home-page"
-        >Saiba Mais</a
-      >
-
+      >Saiba Mais</a>
       <div class="card">
         <div class="sobre1">
-          <img
-            src="assets/img/emoji-alerta.png"
-            alt="Emoji de alerta"
-            class="emoji-alerta"
-          />
+          <img src="assets/img/emoji-alerta.png" alt="Emoji de alerta" class="emoji-alerta"/>
           <p>
-            Sistemas de alerta antecipado ajudam a salvar vidas em enchentes.
-            Tecnologia, conscientização e infraestrutura eficaz garantem
-            segurança em momentos críticos
+            Sistemas de alerta antecipado ajudam a salvar vidas em enchentes. Tecnologia, conscientização e infraestrutura eficaz garantem segurança em momentos críticos.
           </p>
         </div>
-
         <div class="sobre2">
-          <img
-            src="assets/img/emoji-mundo.png"
-            alt="Emoji do Mundo"
-            class="emoji-mundo"
-          />
+          <img src="assets/img/emoji-mundo.png" alt="Emoji do Mundo" class="emoji-mundo"/>
           <p>
-            Enchentes causam devastação, destruindo casas, interrompendo
-            serviços e colocando vidas em risco. Planejamento urbano e prevenção
-            são essenciais para minimizar danos.
+            Enchentes causam devastação, destruindo casas, interrompendo serviços e colocando vidas em risco. Planejamento urbano e prevenção são essenciais para minimizar danos.
           </p>
         </div>
-
         <div class="sobre3">
-          <img
-            src="assets/img/emoji-semeando.png"
-            alt="Emoji de Semeando"
-            class="emoji-semeando"
-          />
+          <img src="assets/img/emoji-semeando.png" alt="Emoji de Semeando" class="emoji-semeando"/>
           <p>
-            O desmatamento agrava enchentes, reduzindo a absorção da água pelo
-            solo. Preservar áreas verdes protege cidades contra inundações e
-            desastres ambientais.
+            O desmatamento agrava enchentes, reduzindo a absorção da água pelo solo. Preservar áreas verdes protege cidades contra inundações e desastres ambientais.
           </p>
         </div>
       </div>
     </section>
-    <section class="tecnologia" id="tecnologia">
-      <h2>NOAH</h2>
 
-      <div class="text-noah">
-        <p class="text-noah-1">
-          Desenvolvido Inteiramente com o proposito de evitar Trágedias
-        </p>
-        <hr class="line-text-noah" />
-        <p class="text-noah-2">
-          Desenvolvido Inteiramente com o proposito de evitar Trágedias
-        </p>
-      </div>
-
-      <div class="slideshow-container">
-        <div class="slide fade">
-          <img src="assets/img/slide-noah1.png" alt="Imagem do NOAH" />
+    <!-- SEÇÃO OBJETIVO  -->
+    <section class="objetivo-section" id="objetivo">
+      <div class="objetivo-container">
+        <img src="assets/img/img-beneficios.jpg" alt="Família afetada por enchente" class="objetivo-img"/>
+        <div class="objetivo-texto">
+          <h2>Nosso Objetivo</h2>
+          <p>
+            Nosso objetivo é salvar vidas e proteger famílias que muitas vezes não têm escolha de onde morar, vivendo em áreas de risco. O NOAH foi criado para ser o guardião dessas pessoas, oferecendo monitoramento e alerta contra enchentes, principalmente em regiões mais vulneráveis do Brasil.
+          </p>
         </div>
-        <div class="slide fade">
-          <img src="assets/img/slide-noah2.png" alt="Imagem do NOAH aberto" />
-        </div>
-        <div class="slide fade">
-          <img
-            src="assets/img/slide-noah3.png"
-            alt="Imagem do NOAH na versão preta"
-          />
-        </div>
-
-        <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
-        <button class="next" onclick="mudarSlide(1)">&#10095;</button>
       </div>
     </section>
 
-    <section class="objetivo" id="objetivo">
-      <h2 class="objetivo-h2">Objetivos</h2>
-      <p class="objetivo-1">
-        O objetivo do NOAH é estar presentes em todas as regiões com perigo de
-        enchentes para preparar os orgão publicos e fazer com esse
-        representantes do povo sprotejam os seus cidadãos
-      </p>
-    </section>
-    <section class="publico-alvo" id="publico-alvo">
-      <h2 class="publico-h2">Quem devemos ajudar?</h2>
-      <h3 class="publico-h3">POPULAÇÃO</h3>
-      <p class="text-publico-1">
-        A população é nossa missão. Sua integridade é nosso alvo e o seu escudo
-        é
-      </p>
-      <p class="text-publico-NOAH">NOAH</p>
-      <video controls class="video-1">
-        <source src="assets/video/video-trem.mp4" type="video/mp4" />
-      </video>
-    </section>
-    <section class="beneficios" id="beneficios">
-      <h2 class="beneficios-h2">Nossos Benefícios?</h2>
-      <p class="beneficios-p1">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor hic, at
-        dolorem accusantium repudiandae repellendus exercitationem explicabo
-        fugiat sapiente ea iste facere, vero voluptatem aut minima consectetur
-        ipsam laboriosam est.
-      </p>
-
-      <img
-        src="assets/img/img-beneficios.jpg"
-        alt="Imagem da Enchente de Brumadinho"
-        class="beneficios-img"
-      />
-
-      <p class="beneficios-p2">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor hic, at
-        dolorem accusantium repudiandae repellendus exercitationem explicabo
-        fugiat sapiente ea iste facere, vero voluptatem aut minima consectetur
-        ipsam laboriosam est.
-      </p>
-    </section>
-
-    <section class="quiz" id="quiz">
-      <div class="quiz-container">
-        <h2 id="question">Pergunta do Quiz</h2>
-        <ul id="answers"></ul>
-        <button id="nextBtn">Próxima pergunta</button>
-        <p id="result" class="hidden"></p>
+    <!-- SEÇÃO PRODUTO NOAH  -->
+    <section class="produto-noah-section" id="impacto">
+      <div class="produto-noah">
+        <div class="produto-carousel-container">
+          <div class="carousel-slides">
+            <div class="slide active">
+              <img src="assets/img/slide-noah1.png" alt="NOAH - Branco" />
+            </div>
+            <div class="slide">
+              <img src="assets/img/slide-noah2.png" alt="NOAH - Aberto" />
+            </div>
+            <div class="slide">
+              <img src="assets/img/slide-noah3.png" alt="NOAH - Versão Preta" />
+            </div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Próximo">&#10095;</button>
+          <div class="carousel-indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <div class="produto-descricao">
+          <h2>Conheça o NOAH</h2>
+          <p>
+            O NOAH é um dispositivo inovador de alerta contra enchentes, desenvolvido para ser instalado em pontos estratégicos de zonas de risco. Ele monitora o nível da água em tempo real e envia alertas para a população e órgãos responsáveis, garantindo prevenção e segurança mesmo em locais com pouca infraestrutura.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="solucao" id="solucao">
-      <h2>NOAH no DIA a DIA</h2>
-      <p>
-        O NOAH funcionara sob posso de orgão responsvaeis pela segurança publica
-        em pontos estrategicos de zonas de risco afim de evitar tragedias com as
-        pessoas que residem on locais de perigo de enchentes
-      </p>
-    </section>
+   <!-- FORMULÁRIO + QUIZ lado a lado (ou um abaixo do outro no celular) -->
+<section class="contato-e-quiz" id="contato-quiz">
+  <div class="contato-quiz-container">
+    <!-- Formulário de contato -->
+    <form class="formulario">
+      <h2>Fale Conosco</h2>
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required />
 
-    <footer class="footer" id="footer">
-      <form class="formulario">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" required />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" name="telefone" required />
 
-        <label for="telefone">Telefone</label>
-        <input type="tel" id="telefone" name="telefone" required />
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
-        <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+    <!-- Quiz interativo -->
+    <div class="quiz-container">
+      <h2 id="question">Pergunta do Quiz</h2>
+      <ul id="answers"></ul>
+      <button id="nextBtn">Próxima pergunta</button>
+      <p id="result" class="hidden"></p>
+    </div>
+  </div>
+  <p class="footer-p1">&copy; 2025 Projeto NOAH — Todos os direitos reservados.</p>
+</section>
 
-        <button type="submit" class="btn">Enviar</button>
-      </form>
-      <p class="footer-p1">
-        &copy; 2025 Projeto NOAH — Todos os direitos reservados.
-      </p>
-    </footer>
-  </body>
+
   <script src="assets/script/script.js" defer></script>
+</body>
 </html>
