@@ -7,16 +7,15 @@
   <link rel="stylesheet" href="assets/style/style.css" />
 </head>
 <body>
-  <!-- Fundo animado (opcional) -->
+  <!-- Fundo animado -->
   <div class="background-animation"></div>
 
-  <!-- NAVBAR com menu hamburguer para mobile -->
+  <!-- NAVBAR com menu hamburguer -->
   <header class="navbar">
     <a href="#home" class="logo-link">
       <img src="assets/img/logoNoah.png" alt="Logo NOAH" class="logo" id="logo-img" />
     </a>
     <p class="nome-logo">NOAH - Segurança Contra Enchentes</p>
-    <!-- Botão hamburguer para celular/tablet -->
     <button class="hamburguer" id="hamburguer-btn" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -25,14 +24,18 @@
         <li><a href="#home" class="menu-link">Home</a></li>
         <li><a href="#objetivo" class="menu-link">Objetivos</a></li>
         <li><a href="#impacto" class="menu-link">Tecnologia</a></li>
+        <li><a href="#publico-alvo" class="menu-link">Público-alvo</a></li>
+        <li><a href="#beneficios" class="menu-link">Benefícios</a></li>
+        <li><a href="#ajuda-diaadia" class="menu-link">Dia a dia</a></li>
       </ul>
     </nav>
   </header>
-  <!-- Botão do modo escuro/claro -->
-<button id="theme-toggle-btn" aria-label="Alternar tema" title="Alternar tema"></button>
+
+  <!-- Botão para alternar tema -->
+  <button id="theme-toggle-btn" aria-label="Alternar tema" title="Alternar tema"></button>
 
   <main>
-    <!-- HERO: imagem grande + cards de impacto -->
+    <!-- HERO: Imagem principal e cards de impacto -->
     <section class="hero" id="home">
       <img
         src="assets/img/img-home-page.png"
@@ -66,7 +69,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO OBJETIVO  -->
+    <!-- OBJETIVO: Texto e imagem -->
     <section class="objetivo-section" id="objetivo">
       <div class="objetivo-container">
         <img src="assets/img/img-beneficios.jpg" alt="Família afetada por enchente" class="objetivo-img"/>
@@ -79,7 +82,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO PRODUTO NOAH  -->
+    <!-- PRODUTO NOAH: Carrossel + texto -->
     <section class="produto-noah-section" id="impacto">
       <div class="produto-noah">
         <div class="produto-carousel-container">
@@ -111,37 +114,76 @@
       </div>
     </section>
 
-   <!-- FORMULÁRIO + QUIZ lado a lado (ou um abaixo do outro no celular) -->
-<section class="contato-e-quiz" id="contato-quiz">
-  <div class="contato-quiz-container">
-    <!-- Formulário de contato -->
-    <form class="formulario">
-      <h2>Fale Conosco</h2>
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome" required />
+    <!-- SESSÃO EXTRA: Público-alvo (imagem esquerda / texto direita) -->
+    <section class="sessao-extra" id="publico-alvo">
+      <div class="sessao-extra-container invertida">
+        <img src="/gs1-front/assets/img/publico alvo.webp" class="sessao-extra-img" alt="">
+        <div class="sessao-extra-texto">
+          <h2>Público-alvo</h2>
+          <p>
+            O NOAH foi pensado especialmente para comunidades e famílias que vivem em áreas de risco de enchente, onde o acesso a alertas rápidos pode significar a diferença entre segurança e perigo.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
+    <!-- SESSÃO EXTRA: Benefícios (imagem esquerda / texto direita) -->
+    <section class="sessao-extra" id="beneficios">
+      <div class="sessao-extra-container invertida">
+        <img src="/gs1-front/assets/img/beneficios.jpeg" class="sessao-extra-img" alt="">
+        <div class="sessao-extra-texto">
+          <h2>Benefícios da Solução</h2>
+          <p>
+            O sistema oferece monitoramento em tempo real, alertas preventivos e integração com órgãos públicos, proporcionando mais tranquilidade, prevenção de perdas e proteção à vida.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <label for="telefone">Telefone</label>
-      <input type="tel" id="telefone" name="telefone" required />
+    <!-- SESSÃO EXTRA: Como Ajuda no Dia a Dia (imagem esquerda / texto direita) -->
+    <section class="sessao-extra" id="ajuda-diaadia">
+      <div class="sessao-extra-container invertida">
+        <img src="/gs1-front/assets/img/dia a dia.webp" class="sessao-extra-img" alt="">
+        <div class="sessao-extra-texto">
+          <h2>Como Ajuda no Dia a Dia</h2>
+          <p>
+            Com o NOAH, famílias podem se organizar com antecedência diante de chuvas fortes, reduzindo o risco de surpresas e protegendo seus bens, suas casas e, principalmente, suas vidas.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <label for="mensagem">Mensagem</label>
-      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+    <!-- FORMULÁRIO + QUIZ -->
+    <section class="contato-e-quiz" id="contato-quiz">
+      <div class="contato-quiz-container">
+        <!-- Formulário de contato -->
+        <form class="formulario">
+          <h2>Fale Conosco</h2>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required />
 
-      <button type="submit" class="btn">Enviar</button>
-    </form>
-    <!-- Quiz interativo -->
-    <div class="quiz-container">
-      <h2 id="question">Pergunta do Quiz</h2>
-      <ul id="answers"></ul>
-      <button id="nextBtn">Próxima pergunta</button>
-      <p id="result" class="hidden"></p>
-    </div>
-  </div>
-  <p class="footer-p1">&copy; 2025 Projeto NOAH — Todos os direitos reservados.</p>
-</section>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
 
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" required />
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+        <!-- Quiz interativo -->
+        <div class="quiz-container">
+          <h2 id="question">Pergunta do Quiz</h2>
+          <ul id="answers"></ul>
+          <button id="nextBtn">Próxima pergunta</button>
+          <p id="result" class="hidden"></p>
+        </div>
+      </div>
+      <p class="footer-p1">&copy; 2025 Projeto NOAH — Todos os direitos reservados.</p>
+    </section>
+  </main>
 
   <script src="assets/script/script.js" defer></script>
 </body>

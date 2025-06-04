@@ -546,3 +546,118 @@ body.light-theme #theme-toggle-btn:hover, body.light-theme #theme-toggle-btn:foc
   background: var(--cor-destaque);
   color: var(--cor-branca);
 }
+
+/* Sessão público-alvo, benefícios, ajuda no dia a dia - moderno e responsivo */
+.sessao-extra {
+  width: 100%;
+  padding: 82px 0 82px 0;
+  background: linear-gradient(95deg, var(--cor-fundo) 72%, var(--cor-alternativa) 100%);
+  transition: background 0.4s;
+}
+/* Container flex alinhando texto e imagem */
+.sessao-extra-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  justify-content: center;
+  border-radius: 24px;
+  box-shadow: 0 8px 28px rgba(5,19,87,0.14);
+  background: rgba(35,37,49,0.10);
+  transition: background 0.4s, box-shadow 0.4s;
+}
+/* Bloco de texto */
+.sessao-extra-texto {
+  flex: 1;
+  padding: 24px 0 24px 0;
+}
+.sessao-extra-texto h2 {
+  color: var(--cor-destaque);
+  font-size: 2.07rem;
+  margin-bottom: 18px;
+}
+.sessao-extra-texto p {
+  color: var(--cor-branca);
+  font-size: 1.17rem;
+  line-height: 1.75;
+  text-align: left;
+  max-width: 630px;
+}
+/* Imagem de impacto */
+.sessao-extra-img {
+  width: 400px;
+  max-width: 44vw;
+  border-radius: 22px;
+  box-shadow: 0 5px 26px rgba(5,19,87,0.16);
+  object-fit: cover;
+  border: 2.5px solid var(--cor-destaque);
+  background: #fff2;
+}
+
+/* Responsividade */
+@media (max-width: 1100px) {
+  .sessao-extra-container {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 10vw;
+  }
+  .sessao-extra-img { width: 98vw; max-width: 99vw; }
+  .sessao-extra-texto h2 { font-size: 1.4rem; }
+  .sessao-extra-texto p { font-size: 1.01rem; }
+}
+@media (max-width: 600px) {
+  .sessao-extra { padding: 36px 0 28px 0;}
+  .sessao-extra-container { gap: 16px; }
+}
+
+/* Tema claro para as sessões extras */
+body.light-theme .sessao-extra {
+  background: linear-gradient(96deg, #f5f5f5 74%, #e4e8ee 100%);
+}
+body.light-theme .sessao-extra-container {
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 8px 38px rgba(160,160,180,0.11);
+}
+body.light-theme .sessao-extra-texto h2 {
+  color: #4769d6;
+}
+body.light-theme .sessao-extra-texto p {
+  color: #23233a;
+}
+body.light-theme .sessao-extra-img {
+  background: #f8f8fc;
+  border: 2.5px solid #4769d6;
+}
+
+/*  alinhamento imagem esquerda e texto direita */
+.sessao-extra-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  justify-content: center;
+  border-radius: 24px;
+  box-shadow: 0 8px 28px rgba(5,19,87,0.14);
+  background: rgba(35,37,49,0.10);
+  transition: background 0.4s, box-shadow 0.4s;
+  flex-direction: row; /* imagem esquerda, texto direita por padrão */
+}
+
+/* Aplica o padrão invertido para essas sessões extras */
+.sessao-extra-container.invertida {
+  flex-direction: row;
+}
+
+/* Responsivo: coluna no mobile */
+@media (max-width: 1100px) {
+  .sessao-extra-container,
+  .sessao-extra-container.invertida {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 10vw;
+    text-align: center;
+  }
+  .sessao-extra-img { width: 98vw; max-width: 99vw; }
+}
