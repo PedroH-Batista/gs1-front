@@ -243,14 +243,32 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ----------------------------------------------
-// CARROSSEL DE IMAGENS - PRODUTO NOAH
+// CARROSSEL DE IMAGENS - PRODUTO NOAH + SINCRONIZAÇÃO DE TEXTO
 // ----------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".produto-noah .slide");
   const prevBtn = document.querySelector(".produto-noah .carousel-btn.prev");
   const nextBtn = document.querySelector(".produto-noah .carousel-btn.next");
   const dots = document.querySelectorAll(".produto-noah .carousel-indicators .dot");
+  const descricao = document.querySelector(".produto-descricao p");
+  const titDesc = document.querySelector(".produto-descricao h2");
   let slideIndex = 0;
+
+  // Textos sincronizados com os slides
+  const textosDoCarrossel = [
+    {
+      titulo: "Conheça o NOAH",
+      texto: "O NOAH é um dispositivo inovador de alerta contra enchentes, desenvolvido para ser instalado em pontos estratégicos de zonas de risco. Ele monitora o nível da água em tempo real e envia alertas para a população e órgãos responsáveis, garantindo prevenção e segurança mesmo em locais com pouca infraestrutura."
+    },
+    {
+      titulo: "Tecnologia: Arduino NOAH",
+      texto: "O coração do NOAH é um projeto robusto em Arduino, programado e montado por nossa equipe. Ele utiliza sensores para monitorar o nível da água e acionar sirenes e alertas instantâneos, garantindo confiabilidade e resposta rápida, inclusive em regiões com infraestrutura limitada."
+    },
+    {
+      titulo: "Comunicação: Software Python",
+      texto: "Desenvolvemos um software em Python que faz a ponte entre o NOAH e a comunidade. Ele permite o envio automático de alertas para grupos no WhatsApp, SMS ou órgãos públicos, conectando tecnologia e pessoas em situações críticas."
+    }
+  ];
 
   function showSlide(n) {
     slideIndex = (n + slides.length) % slides.length;
@@ -258,6 +276,11 @@ document.addEventListener("DOMContentLoaded", function () {
       slide.classList.toggle("active", i === slideIndex);
       if (dots[i]) dots[i].classList.toggle("active", i === slideIndex);
     });
+    // Atualiza texto sincronizado
+    if (descricao && titDesc) {
+      descricao.textContent = textosDoCarrossel[slideIndex].texto;
+      titDesc.textContent = textosDoCarrossel[slideIndex].titulo;
+    }
   }
 
   if (prevBtn && nextBtn) {
@@ -271,7 +294,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (slides.length) showSlide(slideIndex);
 });
- // ======================
+
+// ======================
 // Alternância de Tema (Escuro/Claro)
 // ======================
 (function() {
@@ -312,3 +336,4 @@ if (themeToggleBtn) {
 
 // Troca na primeira carga da página também (por segurança)
 document.addEventListener("DOMContentLoaded", atualizarLogoTema);
+
