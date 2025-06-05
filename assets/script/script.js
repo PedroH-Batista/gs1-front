@@ -1,5 +1,5 @@
 // ----------------------------------------------
-// MENU HAMBURGUER E SCROLL SUAVE
+// MENU HAMBURGUER E SCROLL 
 // ----------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
   // Scroll suave para menu e logo
@@ -375,5 +375,5 @@ if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", atualizarLogoTema);
 }
 
-// Troca na primeira carga da página também (por segurança)
+// Troca na primeira carga da página também 
 document.addEventListener("DOMContentLoaded", atualizarLogoTema);
