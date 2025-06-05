@@ -145,7 +145,7 @@ a:hover { color: var(--cor-destaque); }
 .card p { font-size: 1rem; color: var(--cor-branca); text-align: center; line-height: 1.5;}
 @media (max-width: 950px) { .card { flex-direction: column; align-items: center; gap: 18px;} }
 
-/* NOVA SEÇÃO OBJETIVO GRANDE */
+/* NOVA SEÇÃO  */
 .objetivo-section {
   width: 100%;
   padding: 90px 0 90px 0;
@@ -188,7 +188,7 @@ a:hover { color: var(--cor-destaque); }
   .objetivo-texto h2 { font-size: 1.5rem; }
 }
 
-/* PRODUTO NOAH - NOVA SEÇÃO DESTACADA */
+/* PRODUTO NOAH  */
 .produto-noah-section {
   width: 100%;
   padding: 90px 0 90px 0;
@@ -547,14 +547,14 @@ body.light-theme #theme-toggle-btn:hover, body.light-theme #theme-toggle-btn:foc
   color: var(--cor-branca);
 }
 
-/* Sessão público-alvo, benefícios, ajuda no dia a dia - moderno e responsivo */
+/* Sessão público-alvo, benefícios, ajuda no dia a dia  */
 .sessao-extra {
   width: 100%;
   padding: 82px 0 82px 0;
   background: linear-gradient(95deg, var(--cor-fundo) 72%, var(--cor-alternativa) 100%);
   transition: background 0.4s;
 }
-/* Container flex alinhando texto e imagem */
+/* Container flex */
 .sessao-extra-container {
   max-width: 1300px;
   margin: 0 auto;
@@ -645,7 +645,7 @@ body.light-theme .sessao-extra-img {
   flex-direction: row; /* imagem esquerda, texto direita por padrão */
 }
 
-/* Aplica o padrão invertido para essas sessões extras */
+/* padrão invertido para essas sessões extras */
 .sessao-extra-container.invertida {
   flex-direction: row;
 }
