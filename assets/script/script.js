@@ -3,9 +3,9 @@
 // ----------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
   // Scroll suave para menu e logo
-  document.querySelectorAll('a.menu-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
+  document.querySelectorAll("a.menu-link").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
       if (href.startsWith("#")) {
         e.preventDefault();
         const target = document.querySelector(href);
@@ -15,29 +15,31 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-  document.querySelectorAll('.logo-link').forEach(link => {
-    link.addEventListener('click', function (e) {
+  document.querySelectorAll(".logo-link").forEach((link) => {
+    link.addEventListener("click", function (e) {
       e.preventDefault();
-      document.getElementById('home').scrollIntoView({ behavior: "smooth", block: "start" });
+      document
+        .getElementById("home")
+        .scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 
   // Menu hamburguer responsivo
-  const btn = document.getElementById('hamburguer-btn');
-  const links = document.getElementById('navbar-links');
+  const btn = document.getElementById("hamburguer-btn");
+  const links = document.getElementById("navbar-links");
   if (btn && links) {
-    btn.addEventListener('click', function () {
-      links.classList.toggle('open');
-      btn.classList.toggle('active');
-      btn.setAttribute('aria-expanded', btn.classList.contains('active'));
+    btn.addEventListener("click", function () {
+      links.classList.toggle("open");
+      btn.classList.toggle("active");
+      btn.setAttribute("aria-expanded", btn.classList.contains("active"));
     });
     // Fecha menu ao clicar em link no mobile
-    document.querySelectorAll('.menu-link').forEach(link => {
-      link.addEventListener('click', function () {
+    document.querySelectorAll(".menu-link").forEach((link) => {
+      link.addEventListener("click", function () {
         if (window.innerWidth <= 900) {
-          links.classList.remove('open');
-          btn.classList.remove('active');
-          btn.setAttribute('aria-expanded', false);
+          links.classList.remove("open");
+          btn.classList.remove("active");
+          btn.setAttribute("aria-expanded", false);
         }
       });
     });
@@ -59,7 +61,34 @@ document.addEventListener("DOMContentLoaded", function () {
       options: ["Sim", "Não"],
     },
     {
-      question: "Você acha que na sua cidade deveria ter um sistema para ajudar pessoas a prevenir enchentes?",
+      question:
+        "Você acha que na sua cidade deveria ter um sistema para ajudar pessoas a prevenir enchentes?",
+      options: ["Sim", "Não"],
+    },
+    {
+      question: "Você conhece alguém que já sofreu por conta de enchentes?",
+      options: ["Sim", "Não"],
+    },
+    {
+      question: "Você já viu alguma reportagem sobre enchentes?",
+      options: ["Sim", "Não"],
+    },
+    {
+      question: "Você já viu as consequências causadas por enchentes?",
+      options: ["Sim", "Não"],
+    },
+    {
+      question:
+        "Você conhece alguma tecnologia que auxilia na prevenção de tragédias causadas por enchentes?",
+      options: ["Sim", "Não"],
+    },
+    {
+      question:
+        "Você acha que alguma tecnologia hoje poderia alertar sobre possíveis enchentes?",
+      options: ["Sim", "Não"],
+    },
+    {
+      question: "Você acha que essas tecnologias são eficazes?",
       options: ["Sim", "Não"],
     },
     {
@@ -94,9 +123,11 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
       // Seleção visual ao clicar
       li.addEventListener("click", function () {
-        document.querySelectorAll('#answers li').forEach(l => l.classList.remove('selected'));
-        li.classList.add('selected');
-        li.querySelector('input').checked = true;
+        document
+          .querySelectorAll("#answers li")
+          .forEach((l) => l.classList.remove("selected"));
+        li.classList.add("selected");
+        li.querySelector("input").checked = true;
       });
       answersEl.appendChild(li);
     });
@@ -117,8 +148,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const answer = getSelected();
       if (answer === undefined) {
         // Foco visual no campo não respondido
-        answersEl.classList.add('shake');
-        setTimeout(() => answersEl.classList.remove('shake'), 300);
+        answersEl.classList.add("shake");
+        setTimeout(() => answersEl.classList.remove("shake"), 300);
         return;
       }
       respostas.push(answer);
@@ -212,7 +243,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
     if (!validateTelefone(telefone.value.trim())) {
-      feedback.textContent = "Por favor, insira um telefone válido (apenas números, mínimo 8 dígitos).";
+      feedback.textContent =
+        "Por favor, insira um telefone válido (apenas números, mínimo 8 dígitos).";
       feedback.style.color = "#e63946";
       telefone.focus();
       return;
@@ -227,7 +259,9 @@ document.addEventListener("DOMContentLoaded", function () {
     feedback.textContent = "Formulário enviado com sucesso!";
     feedback.style.color = "#38b000";
     form.reset();
-    setTimeout(() => { feedback.textContent = ""; }, 3500);
+    setTimeout(() => {
+      feedback.textContent = "";
+    }, 3500);
   });
 
   // Validação do Email
@@ -249,7 +283,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".produto-noah .slide");
   const prevBtn = document.querySelector(".produto-noah .carousel-btn.prev");
   const nextBtn = document.querySelector(".produto-noah .carousel-btn.next");
-  const dots = document.querySelectorAll(".produto-noah .carousel-indicators .dot");
+  const dots = document.querySelectorAll(
+    ".produto-noah .carousel-indicators .dot"
+  );
   const descricao = document.querySelector(".produto-descricao p");
   const titDesc = document.querySelector(".produto-descricao h2");
   let slideIndex = 0;
@@ -258,16 +294,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const textosDoCarrossel = [
     {
       titulo: "Conheça o NOAH",
-      texto: "O NOAH é um dispositivo inovador de alerta contra enchentes, desenvolvido para ser instalado em pontos estratégicos de zonas de risco. Ele monitora o nível da água em tempo real e envia alertas para a população e órgãos responsáveis, garantindo prevenção e segurança mesmo em locais com pouca infraestrutura."
+      texto:
+        "O NOAH é um dispositivo inovador de alerta contra enchentes, desenvolvido para ser instalado em pontos estratégicos de zonas de risco. Ele monitora o nível da água em tempo real e envia alertas para a população e órgãos responsáveis, garantindo prevenção e segurança mesmo em locais com pouca infraestrutura.",
     },
     {
       titulo: "Tecnologia: Arduino NOAH",
-      texto: "O coração do NOAH é um projeto robusto em Arduino, programado e montado por nossa equipe. Ele utiliza sensores para monitorar o nível da água e acionar sirenes e alertas instantâneos, garantindo confiabilidade e resposta rápida, inclusive em regiões com infraestrutura limitada."
+      texto:
+        "O coração do NOAH é um projeto robusto em Arduino, programado e montado por nossa equipe. Ele utiliza sensores para monitorar o nível da água e acionar sirenes e alertas instantâneos, garantindo confiabilidade e resposta rápida, inclusive em regiões com infraestrutura limitada.",
     },
     {
       titulo: "Comunicação: Software Python",
-      texto: "Desenvolvemos um software em Python que faz a ponte entre o NOAH e a comunidade. Ele permite o envio automático de alertas para grupos no WhatsApp, SMS ou órgãos públicos, conectando tecnologia e pessoas em situações críticas."
-    }
+      texto:
+        "Desenvolvemos um software em Python que faz a ponte entre o NOAH e a comunidade. Ele permite o envio automático de alertas para grupos no WhatsApp, SMS ou órgãos públicos, conectando tecnologia e pessoas em situações críticas.",
+    },
   ];
 
   function showSlide(n) {
@@ -298,22 +337,24 @@ document.addEventListener("DOMContentLoaded", function () {
 // ======================
 // Alternância de Tema (Escuro/Claro)
 // ======================
-(function() {
-  const btn = document.getElementById('theme-toggle-btn');
+(function () {
+  const btn = document.getElementById("theme-toggle-btn");
   if (!btn) return;
   // Salva tema no localStorage
   function setTheme(theme) {
-    document.body.classList.toggle('light-theme', theme === 'light');
-    localStorage.setItem('noah-theme', theme);
-    btn.innerHTML = theme === 'light' ? '☀️' : '🌙';
+    document.body.classList.toggle("light-theme", theme === "light");
+    localStorage.setItem("noah-theme", theme);
+    btn.innerHTML = theme === "light" ? "☀️" : "🌙";
   }
   // Define tema ao abrir
-  const stored = localStorage.getItem('noah-theme');
-  setTheme(stored === 'light' ? 'light' : 'dark');
+  const stored = localStorage.getItem("noah-theme");
+  setTheme(stored === "light" ? "light" : "dark");
 
-  btn.addEventListener('click', () => {
-    const atual = document.body.classList.contains('light-theme') ? 'light' : 'dark';
-    setTheme(atual === 'dark' ? 'light' : 'dark');
+  btn.addEventListener("click", () => {
+    const atual = document.body.classList.contains("light-theme")
+      ? "light"
+      : "dark";
+    setTheme(atual === "dark" ? "light" : "dark");
   });
 })();
 
@@ -336,4 +377,3 @@ if (themeToggleBtn) {
 
 // Troca na primeira carga da página também (por segurança)
 document.addEventListener("DOMContentLoaded", atualizarLogoTema);
-
