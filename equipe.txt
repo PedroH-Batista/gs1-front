@@ -1,0 +1,8 @@
+LINK DO REPOSITÓRIO
+
+https://github.com/PedroH-Batista/gs1-front.git
+
+
+563478 - João Felipe Bertini
+564384 - Luan Durbano Almeida
+563220 - Pedro Batista
